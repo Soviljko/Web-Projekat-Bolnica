@@ -1,0 +1,143 @@
+<?xml version="1.0"?>
+<Appointments xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Appointment>
+    <Doctor>
+      <Username>doctor1</Username>
+      <Password>doctorPass</Password>
+      <Name>Dr. John</Name>
+      <Surname>Smith</Surname>
+      <BirthDate>1975-05-15T00:00:00</BirthDate>
+      <Email>doctor1@example.com</Email>
+      <Appointments />
+    </Doctor>
+    <Status>SCHEDULED</Status>
+    <DateOfAppointment>2024-09-01T10:00:00</DateOfAppointment>
+    <Description>dawwda</Description>
+  </Appointment>
+  <Appointment>
+    <Doctor>
+      <Username>doctor2</Username>
+      <Password>doctorPass2</Password>
+      <Name>Dr. Jane</Name>
+      <Surname>Doe</Surname>
+      <BirthDate>1978-08-12T00:00:00</BirthDate>
+      <Email>doctor2@example.com</Email>
+      <Appointments />
+    </Doctor>
+    <Status>SCHEDULED</Status>
+    <DateOfAppointment>2024-09-05T14:00:00</DateOfAppointment>
+    <Description>Consultation</Description>
+  </Appointment>
+  <Appointment>
+    <Doctor>
+      <Username>doctor3</Username>
+      <Password>doctorPass3</Password>
+      <Name>Dr. Alice</Name>
+      <Surname>Jones</Surname>
+      <BirthDate>1980-11-22T00:00:00</BirthDate>
+      <Email>doctor3@example.com</Email>
+      <Appointments />
+    </Doctor>
+    <Status>SCHEDULED</Status>
+    <DateOfAppointment>2024-09-10T08:00:00</DateOfAppointment>
+    <Description>Cardiology Exam</Description>
+  </Appointment>
+  <Appointment>
+    <Doctor>
+      <Username>doctor4</Username>
+      <Password>doctorPass4</Password>
+      <Name>Dr. Sarah</Name>
+      <Surname>Lee</Surname>
+      <BirthDate>1972-02-17T00:00:00</BirthDate>
+      <Email>doctor4@example.com</Email>
+      <Appointments />
+    </Doctor>
+    <Status>SCHEDULED</Status>
+    <DateOfAppointment>2024-09-07T11:00:00</DateOfAppointment>
+    <Description>Dermatology Consultation</Description>
+  </Appointment>
+  <Appointment>
+    <Doctor>
+      <Username>doctor5</Username>
+      <Password>doctorPass5</Password>
+      <Name>Dr. Emily</Name>
+      <Surname>White</Surname>
+      <BirthDate>1985-03-30T00:00:00</BirthDate>
+      <Email>doctor5@example.com</Email>
+      <Appointments />
+    </Doctor>
+    <Status>SCHEDULED</Status>
+    <DateOfAppointment>2024-09-15T09:00:00</DateOfAppointment>
+    <Description>Eye examination</Description>
+  </Appointment>
+  <Appointment>
+    <Doctor>
+      <Username>doctor6</Username>
+      <Password>doctorPass6</Password>
+      <Name>Dr. Michael</Name>
+      <Surname>Brown</Surname>
+      <BirthDate>1979-12-04T00:00:00</BirthDate>
+      <Email>doctor6@example.com</Email>
+      <Appointments />
+    </Doctor>
+    <Status>SCHEDULED</Status>
+    <DateOfAppointment>2024-09-20T13:00:00</DateOfAppointment>
+    <Description>Magnetic Resonance</Description>
+  </Appointment>
+  <Appointment>
+    <Doctor>
+      <Username>doctor7</Username>
+      <Password>doctorPass7</Password>
+      <Name>Dr. Olivia</Name>
+      <Surname>Wilson</Surname>
+      <BirthDate>1990-06-22T00:00:00</BirthDate>
+      <Email>doctor7@example.com</Email>
+      <Appointments />
+    </Doctor>
+    <Status>FREE</Status>
+    <DateOfAppointment>2024-09-25T15:00:00</DateOfAppointment>
+    <Description>Blood Draw</Description>
+  </Appointment>
+  <Appointment>
+    <Doctor>
+      <Username>doctor1</Username>
+      <Password>doctorPass</Password>
+      <Name>Dr. John</Name>
+      <Surname>Smith</Surname>
+      <BirthDate>1975-05-15T00:00:00</BirthDate>
+      <Email>doctor1@example.com</Email>
+      <Appointments />
+    </Doctor>
+    <Status>FREE</Status>
+    <DateOfAppointment>2022-02-10T07:00:00</DateOfAppointment>
+    <Description>nesto</Description>
+  </Appointment>
+  <Appointment>
+    <Doctor>
+      <Username>doctor1</Username>
+      <Password>doctorPass</Password>
+      <Name>Dr. John</Name>
+      <Surname>Smith</Surname>
+      <BirthDate>1975-05-15T00:00:00</BirthDate>
+      <Email>doctor1@example.com</Email>
+      <Appointments />
+    </Doctor>
+    <Status>FREE</Status>
+    <DateOfAppointment>2024-09-01T10:00:00</DateOfAppointment>
+    <Description>Appointment Test</Description>
+  </Appointment>
+  <Appointment>
+    <Doctor>
+      <Username>doctor1</Username>
+      <Password>doctorPass</Password>
+      <Name>Dr. John</Name>
+      <Surname>Smith</Surname>
+      <BirthDate>1975-05-15T00:00:00</BirthDate>
+      <Email>doctor1@example.com</Email>
+      <Appointments />
+    </Doctor>
+    <Status>SCHEDULED</Status>
+    <DateOfAppointment>2024-09-18T11:00:00</DateOfAppointment>
+    <Description>Test 2</Description>
+  </Appointment>
+</Appointments>

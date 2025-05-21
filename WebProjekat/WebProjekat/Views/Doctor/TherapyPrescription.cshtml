@@ -1,0 +1,68 @@
+﻿@model WebProjekat.Models.Appointment
+@using WebProjekat.Models
+@{
+    ViewBag.Title = "Therapy Prescription";
+    Layout = "~/Views/Shared/_DoctorSharedLayout.cshtml";
+
+}
+
+<div class="therapy-prescription-container">
+    <h2 class="text-center">Therapy Prescription</h2>
+    <p class="text-center">
+        Enter therapy details for the appointment scheduled on <strong>@Model.AppointmentDate.ToString("yyyy-MM-dd HH:mm")</strong>
+    </p>
+
+    @using (Html.BeginForm("TherapySavingForPatient", "Doctor", FormMethod.Post))
+    {
+        @Html.Hidden("idOfAppointmentForPrescription", Model.AppointmentDate.Ticks)
+
+        <div class="form-group">
+            <label class="therapy-description" for="descriptionOfTherapy">Therapy Description:</label>
+            <textarea class="form-control" name="descriptionOfTherapy" rows="4" placeholder="Enter detailed therapy instructions here..."></textarea>
+        </div>
+
+        <div class="form-group text-center">
+            <button type="submit" class="btn btn-primary">Save Therapy Prescription</button>
+        </div>
+    }
+</div>
+
+<style>
+    .therapy-prescription-container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .therapy-description{
+        margin-left: 140px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+        color: #fff;
+    }
+
+    .form-group textarea {
+        width: 100%;
+        resize: vertical; /* Allow vertical resizing only */
+        margin-bottom: 10px; /* Adjust margin to control spacing */
+        margin-left: 140px;
+    }
+
+    .form-group button {
+        margin-top: 10px; /* Adjust margin to control spacing */
+    }
+</style>

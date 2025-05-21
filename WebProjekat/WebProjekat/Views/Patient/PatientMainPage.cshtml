@@ -1,0 +1,117 @@
+﻿@{
+    Layout = "~/Views/Shared/_PatientSharedLayout.cshtml";
+}
+
+@using WebProjekat.Models
+@{
+    // Dohvatanje pacijenta iz sesije
+    var patient = Session["User"] as Patient;
+
+    if (patient == null)
+    {
+        <p>Error: No patient data available.</p>
+        return;
+    }
+}
+
+<div class="container">
+    <div class="text-center mb-4">
+        <h2>Welcome to your Main Page @patient.Name!</h2>
+        <p class="lead">Here you can view your appointments and schedule new appointments.</p>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-header">
+            <h3>Your Scheduled Appointments</h3>
+        </div>
+        <div class="card-body">
+            @* Dodavanje dela za sortiranje *@
+            <div class="mb-3">
+                <form method="get" action="@Url.Action("SortAppointments", "Patient")">
+                    <label for="sortOrder">Sort by:</label>
+                    <select name="sortOrder" id="sortOrder" class="form-control d-inline-block w-auto">
+                        <option value="date_asc">Date Ascending</option>
+                        <option value="date_desc">Date Descending</option>
+                        <option value="doctor_asc">Doctor Name Ascending</option>
+                        <option value="doctor_desc">Doctor Name Descending</option>
+                    </select>
+                    <button type="submit" class="btn btn-secondary ml-2">Sort</button>
+                </form>
+            </div>
+
+            @if (patient.Appointments != null && patient.Appointments.Any())
+            {
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>Doctor's Full Name</th>
+                                <th>Date & Time of appointment</th>
+                                <th>Appointment Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var appointment in patient.Appointments)
+                            {
+                                <tr>
+                                    <td>@appointment.Doctor.Name @appointment.Doctor.Surname</td>
+                                    <td>@appointment.AppointmentDate.ToString("yyyy-MM-dd HH:mm")</td>
+                                    <td>@appointment.DescriptionOfTherapy</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+            else
+            {
+                <p>You have no scheduled appointments.</p>
+            }
+
+            <a href="@Url.Action("PatientAppointmentScheduling", "Patient")" class="btn btn-primary">Appointment Scheduling</a>
+
+        </div>
+    </div>
+</div>
+
+<style>
+    .text-center {
+        text-align: center;
+    }
+
+    .mb-4 {
+        margin-bottom: 1.5rem;
+    }
+
+    .lead {
+        font-size: 1.25rem;
+        font-weight: 300;
+    }
+
+    .card {
+        border-radius: 0.5rem;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-header {
+        background-color: #007bff;
+        color: white;
+        padding: 1rem;
+        font-size: 1.25rem;
+    }
+
+    .card-body {
+        padding: 1.5rem;
+    }
+
+    .thead-dark th {
+        background-color: #343a40;
+        color: #fff;
+    }
+
+    .table {
+        border-radius: 0.5rem;
+        overflow: hidden;
+    }
+</style>

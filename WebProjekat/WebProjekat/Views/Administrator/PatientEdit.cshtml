@@ -1,0 +1,114 @@
+﻿@model WebProjekat.Models.Patient
+
+@{
+    ViewBag.Title = "Edit Patient Details";
+    Layout = "~/Views/Shared/_AdministratorLayout.cshtml";
+}
+
+<div class="patient-edit-container">
+    <h2>Edit Patient Details</h2>
+
+    @using (Html.BeginForm())
+    {
+        @Html.HiddenFor(model => model.JMBG)
+        @Html.HiddenFor(model => model.Username)
+
+        <div class="form-row">
+            <div class="col-md-6">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Name</span>
+                    </div>
+                    @Html.TextBoxFor(model => model.Name, new { @class = "form-control", placeholder = "Full Name" })
+                </div>
+                <small class="form-text text-danger">
+                    @Html.ValidationMessageFor(model => model.Name)
+                </small>
+            </div>
+
+            <div class="col-md-6">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Surname</span>
+                    </div>
+                    @Html.TextBoxFor(model => model.Surname, new { @class = "form-control", placeholder = "Surname" })
+                </div>
+                <small class="form-text text-danger">
+                    @Html.ValidationMessageFor(model => model.Surname)
+                </small>
+            </div>
+        </div>
+
+        <div class="form-row mt-3">
+            <div class="col-md-6">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Birth Date</span>
+                    </div>
+                    @Html.TextBoxFor(model => model.BirthDate, "{0:yyyy-MM-dd}", new { @class = "form-control", type = "date" })
+                </div>
+                <small class="form-text text-danger">
+                    @Html.ValidationMessageFor(model => model.BirthDate)
+                </small>
+            </div>
+
+            <div class="col-md-6">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Password</span>
+                    </div>
+                    @Html.PasswordFor(model => model.Password, new { @class = "form-control", placeholder = "New Password" })
+                </div>
+                <small class="form-text text-danger">
+                    @Html.ValidationMessageFor(model => model.Password)
+                </small>
+            </div>
+        </div>
+
+        <div class="form-row mt-3">
+            <div class="col-md-6">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Email</span>
+                    </div>
+                    @Html.TextBoxFor(model => model.Email, new { @class = "form-control", placeholder = "Email Address" })
+                </div>
+                <small class="form-text text-danger">
+                    @Html.ValidationMessageFor(model => model.Email)
+                </small>
+            </div>
+        </div>
+
+        <div class="form-group mt-4">
+            <button type="submit" class="btn btn-lg btn-primary btn-block">Update Patient</button>
+        </div>
+    }
+</div>
+
+<style>
+    .patient-edit-container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .input-group-text {
+        width: 120px;
+    }
+
+    .form-row {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .btn-block {
+        width: 100%;
+    }
+
+    .form-group {
+        margin-top: 20px;
+    }
+</style>

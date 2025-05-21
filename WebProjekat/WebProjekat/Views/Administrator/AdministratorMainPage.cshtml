@@ -1,0 +1,179 @@
+﻿@using WebProjekat.Models
+    @{
+        Layout = "~/Views/Shared/_AdministratorLayout.cshtml";
+
+        ViewBag.Title = "Administrator Main Page";
+
+        // Dohvatanje administratora iz sesije
+        var currentAdmin = Session["User"] as Administrator;
+
+        if (currentAdmin == null)
+        {
+            <p>Error: No admins found.</p> return;
+        }
+
+        // Dohvatanje pacijenata
+        var listOfPatients = ViewBag.Patients as List<Patient>;
+    }
+
+    <h2>Welcome to your Main Page @currentAdmin.Name!</h2>
+    <h3>Patient List</h3>
+
+    @if (listOfPatients != null && listOfPatients.Any())
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                    <th>Email Address</th>
+                    <th>Date of Birth</th>
+                    <th>Scheduled Appointments</th>
+                    <th>Modifications</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var patient in listOfPatients)
+                {
+                    <tr>
+                        <td>@patient.Name</td>
+                        <td>@patient.Surname</td>
+                        <td>@patient.Email</td>
+                        <td>@patient.BirthDate.ToString("yyyy-MM-dd")</td>
+                        <td>
+                            @if (patient.Appointments != null && patient.Appointments.Any())
+                            {
+                                <ul>
+                                    @foreach (var appointment in patient.Appointments)
+                                    {
+                                        <li>
+                                            @appointment.AppointmentDate.ToString("yyyy-MM-dd HH:mm") - @appointment.Doctor.Name @appointment.Doctor.Surname (@appointment.DescriptionOfTherapy)
+                                        </li>
+                                    }
+                                </ul> }
+                            else
+                            {
+                                <span>No appointments found for patient @patient.Name @patient.Surname.</span>}
+                        </td>
+                        <td>
+                            @using (Html.BeginForm("PatientRemoveFromDatabase", "Administrator", FormMethod.Post))
+                            {
+                                @Html.Hidden("jmbg", patient.JMBG)
+                                <button type="submit" class="btn btn-danger">Remove</button>}
+                            <a href="@Url.Action("PatientEdit", "Administrator", new { jmbg = patient.JMBG })" class="btn btn-primary">Edit Details</a>
+                        </td>
+                    </tr>
+    }
+            </tbody>
+        </table> }
+    else
+    {
+        <p>No patients found in database!</p>}
+
+@*@using WebProjekat.Models
+@{
+    Layout = "~/Views/Shared/_AdministratorLayout.cshtml";
+    ViewBag.Title = "Administrator Main Page";
+
+    var currentAdmin = Session["User"] as Administrator;
+
+    if (currentAdmin == null)
+    {
+        <p>Error: No admins found.</p>
+        return;
+    }
+
+    var listOfPatients = ViewBag.Patients as List<Patient>;
+}
+
+<h2>Welcome to your Main Page @currentAdmin.Name!</h2>
+<p>Here you can manage patients, create new ones, update their data and delete them.</p>
+
+<h3>Patient List</h3>
+
+ Sort and Filter Form 
+<form method="get" action="@Url.Action("PatientList", "Administrator")">
+    <div>
+        <label for="searchQuery">Search:</label>
+        <input type="text" name="searchQuery" id="searchQuery" value="@Request.QueryString["searchQuery"]" />
+    </div>
+    <div>
+        <label for="sortOrder">Sort by:</label>
+        <select name="sortOrder" id="sortOrder">
+            <option value="">--Select--</option>
+            <option value="NameAsc">Name Ascending</option>
+            <option value="NameDesc">Name Descending</option>
+            <option value="SurnameAsc">Surname Ascending</option>
+            <option value="SurnameDesc">Surname Descending</option>
+            <option value="JMBGAsc">JMBG Ascending</option>
+            <option value="JMBGDesc">JMBG Descending</option>
+            <option value="EmailAsc">Email Ascending</option>
+            <option value="EmailDesc">Email Descending</option>
+            <option value="BirthDateAsc">Birth Date Ascending</option>
+            <option value="BirthDateDesc">Birth Date Descending</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Apply</button>
+</form>
+
+@if (listOfPatients != null && listOfPatients.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Email</th>
+                <th>Date of Birth</th>
+                <th>Appointments</th>
+                <th>Modifications</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var patient in listOfPatients)
+            {
+                <tr>
+                    <td>@patient.Name</td>
+                    <td>@patient.Surname</td>
+                    <td>@patient.Email</td>
+                    <td>@patient.BirthDate.ToString("yyyy-MM-dd")</td>
+                    <td>
+                        @if (patient.Appointments != null && patient.Appointments.Any())
+                        {
+                            <ul>
+                                @foreach (var appointment in patient.Appointments)
+                                {
+                                    <li>
+                                        @appointment.AppointmentDate.ToString("yyyy-MM-dd HH:mm") - @appointment.Doctor.Name @appointment.Doctor.Surname (@appointment.DescriptionOfTherapy)
+                                    </li>
+                                }
+                            </ul>
+                        }
+                        else
+                        {
+                            <span>No appointments found for patient @patient.Name @patient.Surname.</span>
+                        }
+                    </td>
+                    <td>
+                        @using (Html.BeginForm("PatientRemoveFromDatabase", "Administrator", FormMethod.Post))
+                        {
+                            @Html.Hidden("jmbg", patient.JMBG)
+                            <button type="submit" class="btn btn-danger">Remove</button>
+                        }
+                        <a href="@Url.Action("PatientEdit", "Administrator", new { jmbg = patient.JMBG })" class="btn btn-primary">Edit</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No patients found in database!</p>
+}*@
+
+
+
+
+
+

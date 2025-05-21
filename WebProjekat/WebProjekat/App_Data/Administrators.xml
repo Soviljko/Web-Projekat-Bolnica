@@ -1,0 +1,31 @@
+﻿<Administrators>
+	<Administrator>
+		<Username>adminA1</Username>
+		<Password>securePassA1</Password>
+		<Name>Michael</Name>
+		<Surname>Johnson</Surname>
+		<DateOfBirth>1984-11-05</DateOfBirth>
+	</Administrator>
+	<Administrator>
+		<Username>adminB2</Username>
+		<Password>passB2@123</Password>
+		<Name>Emily</Name>
+		<Surname>Williams</Surname>
+		<DateOfBirth>1992-07-20</DateOfBirth>
+	</Administrator>
+	<Administrator>
+		<Username>adminC3</Username>
+		<Password>adminSecureC3</Password>
+		<Name>David</Name>
+		<Surname>Brown</Surname>
+		<DateOfBirth>1980-03-30</DateOfBirth>
+	</Administrator>
+	<Administrator>
+		<Username>adminD4</Username>
+		<Password>passwordD4!</Password>
+		<Name>Linda</Name>
+		<Surname>Garcia</Surname>
+		<DateOfBirth>1975-09-12</DateOfBirth>
+	</Administrator>
+</Administrators>
+

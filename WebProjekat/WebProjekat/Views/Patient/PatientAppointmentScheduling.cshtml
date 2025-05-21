@@ -1,0 +1,79 @@
+﻿@model List<WebProjekat.Models.Appointment>
+@{
+    ViewBag.Title = "PatientAppointmentScheduling";
+    Layout = "~/Views/Shared/_PatientSharedLayout.cshtml";
+}
+
+<h2>Patient Appointment Scheduling</h2>
+
+<h2 class="text-center mb-4">Patient Appointment Scheduling</h2>
+
+<form action="@Url.Action("PatientAppointmentScheduling", "Patient")" method="post">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Doctor's Full Name</th>
+                                <th scope="col">Date & Time of Free Appointments</th>
+                                <th scope="col">Appointment Description</th>
+                                <th scope="col">Select Available Appointments</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var appointment in Model)
+                            {
+                                <tr>
+                                    <td>@appointment.Doctor.Name @appointment.Doctor.Surname</td>
+                                    <td>@appointment.AppointmentDate.ToString("yyyy-MM-dd HH:mm")</td>
+                                    <td>@appointment.DescriptionOfTherapy</td>
+                                    <td>
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" id="appointment-@appointment.AppointmentDate.Ticks" name=appointmentId value="@appointment.AppointmentDate.Ticks" class="custom-control-input">
+                                            <label class="custom-control-label" for="appointment-@appointment.AppointmentDate.Ticks"></label>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <div class="text-center mt-4">
+                    <button type="submit" class="btn btn-primary btn-lg">Schedule Selected Appointment/s</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+@if (ViewBag.Error != null)
+{
+    <div class="alert alert-danger text-center mt-4">@ViewBag.Error</div>
+}
+
+<style>
+    .table {
+        border-radius: 0.5rem;
+        overflow: hidden;
+    }
+
+    .thead-dark th {
+        background-color: #343a40;
+        color: #fff;
+    }
+
+    .custom-control-input:checked ~ .custom-control-label::before {
+        background-color: #007bff;
+    }
+
+    .btn-lg {
+        font-size: 1.25rem;
+        padding: 0.75rem 1.5rem;
+    }
+
+    .alert {
+        font-size: 1.1rem;
+    }
+</style>

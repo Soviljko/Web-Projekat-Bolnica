@@ -1,0 +1,68 @@
+﻿@model IEnumerable<WebProjekat.Models.Appointment>
+    @using WebProjekat.Models
+
+    @{
+        ViewBag.Title = "Doctor Main Page";
+        Layout = "~/Views/Shared/_DoctorSharedLayout.cshtml";
+    }
+
+    <h2>Appointments for @(((Doctor)Session["User"]).Name) @(((Doctor)Session["User"]).Surname)</h2>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Date & Time</th>
+                <th>Description</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var appointment in Model)
+            {
+                <tr>
+                    <td>@appointment.AppointmentDate.ToString("yyyy-MM-dd HH:mm")</td>
+                    <td>@appointment.DescriptionOfTherapy</td>
+                    <td>
+                        <span class="badge" style="background-color:@(appointment.Status == Status.FREE ? "#28a745" : "#dc3545");">
+                            @appointment.Status
+                        </span>
+                    </td>
+                    <td>
+                        @if (appointment.Status == Status.SCHEDULED)
+                        {
+                            <a href="@Url.Action("TherapyPrescription", "Doctor", new { idOfAppointmentForPrescription = appointment.AppointmentDate.Ticks })" class="btn btn-primary">Prescribe therapy to the patient</a>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <style>
+        .table {
+            width: 100%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+
+            .table th, .table td {
+                padding: 10px;
+                text-align: left;
+                border-bottom: 1px solid #ddd;
+            }
+
+        .badge {
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+
+
+

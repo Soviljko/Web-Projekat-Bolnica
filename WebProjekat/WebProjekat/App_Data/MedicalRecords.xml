@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MedicalRecords>
+	<MedicalRecord>
+		<Patient>
+			<Username>patient1</Username>
+			<JMBG>1234567890123</JMBG>
+			<Password>pass123</Password>
+			<Name>Mark</Name>
+			<Surname>Taylor</Surname>
+			<BirthDate>1999-12-01T00:00:00</BirthDate>
+			<Email>mark.taylor@example.com</Email>
+			<Appointments>
+				<Appointment>
+					<Doctor>
+						<Username>doctor1</Username>
+						<Password>doctorPass</Password>
+						<Name>Dr. John</Name>
+						<Surname>Smith</Surname>
+						<BirthDate>1975-05-15T00:00:00</BirthDate>
+						<Email>doctor1@example.com</Email>
+						<Appointments/>
+					</Doctor>
+					<Status>SCHEDULED</Status>
+					<DateOfAppointment>2024-09-01T10:00:00</DateOfAppointment>
+					<Description>Annual Checkup</Description>
+				</Appointment>
+			</Appointments>
+			<Therapies>
+				<Therapy>Take vitamins daily</Therapy>
+				<Therapy>30-minute exercise</Therapy>
+			</Therapies>
+		</Patient>
+	</MedicalRecord>
+	<MedicalRecord>
+		<Patient>
+			<Username>patient2</Username>
+			<JMBG>2345678901234</JMBG>
+			<Password>pass456</Password>
+			<Name>John</Name>
+			<Surname>Doe</Surname>
+			<BirthDate>1985-07-22T00:00:00</BirthDate>
+			<Email>john.doe@example.com</Email>
+			<Appointments>
+				<Appointment>
+					<Doctor>
+						<Username>doctor2</Username>
+						<Password>doctorPass2</Password>
+						<Name>Dr. Jane</Name>
+						<Surname>Doe</Surname>
+						<BirthDate>1978-08-12T00:00:00</BirthDate>
+						<Email>doctor2@example.com</Email>
+						<Appointments/>
+					</Doctor>
+					<Status>SCHEDULED</Status>
+					<DateOfAppointment>2024-09-05T14:00:00</DateOfAppointment>
+					<Description>Consultation</Description>
+				</Appointment>
+				<Appointment>
+					<Doctor>
+						<Username>doctor3</Username>
+						<Password>doctorPass3</Password>
+						<Name>Dr. Alice</Name>
+						<Surname>Jones</Surname>
+						<BirthDate>1980-11-22T00:00:00</BirthDate>
+						<Email>doctor3@example.com</Email>
+						<Appointments/>
+					</Doctor>
+					<Status>SCHEDULED</Status>
+					<DateOfAppointment>2024-09-10T08:00:00</DateOfAppointment>
+					<Description>Cardiology Exam</Description>
+				</Appointment>
+			</Appointments>
+			<Therapies>
+				<Therapy>Daily blood pressure monitoring</Therapy>
+			</Therapies>
+		</Patient>
+	</MedicalRecord>
+	<MedicalRecord>
+		<Patient>
+			<Username>patient3</Username>
+			<JMBG>3456789012345</JMBG>
+			<Password>pass789</Password>
+			<Name>Jane</Name>
+			<Surname>Doe</Surname>
+			<BirthDate>1992-03-14T00:00:00</BirthDate>
+			<Email>jane.doe@example.com</Email>
+			<Appointments/>
+			<Therapies/>
+		</Patient>
+	</MedicalRecord>
+	<MedicalRecord>
+		<Patient>
+			<Username>patient4</Username>
+			<JMBG>4567890123456</JMBG>
+			<Password>pass012</Password>
+			<Name>Emily</Name>
+			<Surname>Clark</Surname>
+			<BirthDate>2000-05-30T00:00:00</BirthDate>
+			<Email>emily.clark@example.com</Email>
+			<Appointments>
+				<Appointment>
+					<Doctor>
+						<Username>doctor4</Username>
+						<Password>doctorPass4</Password>
+						<Name>Dr. Sarah</Name>
+						<Surname>Lee</Surname>
+						<BirthDate>1972-02-17T00:00:00</BirthDate>
+						<Email>doctor4@example.com</Email>
+						<Appointments/>
+					</Doctor>
+					<Status>SCHEDULED</Status>
+					<DateOfAppointment>2024-09-07T11:00:00</DateOfAppointment>
+					<Description>Dermatology Consultation</Description>
+				</Appointment>
+			</Appointments>
+			<Therapies/>
+		</Patient>
+	</MedicalRecord>
+	<MedicalRecord>
+		<Patient>
+			<Username>patient5</Username>
+			<JMBG>5678901234567</JMBG>
+			<Password>pass345</Password>
+			<Name>Michael</Name>
+			<Surname>Brown</Surname>
+			<BirthDate>1979-11-18T00:00:00</BirthDate>
+			<Email>michael.brown@example.com</Email>
+			<Appointments/>
+			<Therapies>
+				<Therapy>Low-sodium diet</Therapy>
+				<Therapy>Daily walks</Therapy>
+			</Therapies>
+		</Patient>
+	</MedicalRecord>
+</MedicalRecords>

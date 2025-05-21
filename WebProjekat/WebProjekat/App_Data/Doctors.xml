@@ -1,0 +1,39 @@
+﻿<Doctors>
+	<Doctor>
+		<Username>doctor1</Username>
+		<Password>doctorPass</Password>
+		<Name>Dr. John</Name>
+		<Surname>Smith</Surname>
+		<BirthDate>1975-05-15T00:00:00</BirthDate>
+		<Email>doctor1@example.com</Email>
+		<Appointments/>
+	</Doctor>
+	<Doctor>
+		<Username>doctor2</Username>
+		<Password>doctorPass2</Password>
+		<Name>Dr. Jane</Name>
+		<Surname>Doe</Surname>
+		<BirthDate>1978-08-12T00:00:00</BirthDate>
+		<Email>doctor2@example.com</Email>
+		<Appointments/>
+	</Doctor>
+	<Doctor>
+		<Username>doctor3</Username>
+		<Password>doctorPass3</Password>
+		<Name>Dr. Alice</Name>
+		<Surname>Jones</Surname>
+		<BirthDate>1980-11-22T00:00:00</BirthDate>
+		<Email>doctor3@example.com</Email>
+		<Appointments/>
+	</Doctor>
+	<Doctor>
+		<Username>doctor4</Username>
+		<Password>doctorPass4</Password>
+		<Name>Dr. Sarah</Name>
+		<Surname>Lee</Surname>
+		<BirthDate>1972-02-17T00:00:00</BirthDate>
+		<Email>doctor4@example.com</Email>
+		<Appointments/>
+	</Doctor>
+</Doctors>
+

@@ -1,0 +1,62 @@
+﻿@model WebProjekat.Models.Patient
+
+@{
+    ViewBag.Title = "Create New Patient";
+    Layout = "~/Views/Shared/_AdministratorLayout.cshtml";
+}
+
+<h2>Create a New Patient</h2>
+
+@using (Html.BeginForm("PatientCreation", "Administrator", FormMethod.Post))
+{
+    <div class="form-row">
+        <div class="col-md-6 mb-3">
+            @Html.LabelFor(m => m.Username, "Enter Username:")
+            @Html.TextBoxFor(m => m.Username, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Username, null, new { @class = "text-danger" })
+        </div>
+
+        <div class="col-md-6 mb-3">
+            @Html.LabelFor(m => m.JMBG, "Enter JMBG:")
+            @Html.TextBoxFor(m => m.JMBG, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.JMBG, null, new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="col-md-6 mb-3">
+            @Html.LabelFor(m => m.Password, "Password:")
+            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Password, null, new { @class = "text-danger" })
+        </div>
+
+        <div class="col-md-6 mb-3">
+            @Html.LabelFor(m => m.Name, "First Name:")
+            @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Name, null, new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="col-md-6 mb-3">
+            @Html.LabelFor(m => m.Surname, "Last Name:")
+            @Html.TextBoxFor(m => m.Surname, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Surname, null, new { @class = "text-danger" })
+        </div>
+
+        <div class="col-md-6 mb-3">
+            @Html.LabelFor(m => m.BirthDate, "Birth Date:")
+            @Html.TextBoxFor(m => m.BirthDate, "{0:yyyy-MM-dd}", new { @class = "form-control", type = "date" })
+            @Html.ValidationMessageFor(m => m.BirthDate, null, new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Email, "Email Address:")
+        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Email, null, new { @class = "text-danger" })
+    </div>
+    <br />
+    <button type="submit" class="btn btn-success">Add New Patient</button>
+}
+
